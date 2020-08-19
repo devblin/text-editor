@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>TextEditor</title>
+  </head>
+  <!-- CSS START-->
+  <style></style>
+  <!-- CSS END -->
+  <body>
+    <h1>TextEditor</h1>
+    <div style="display: flex;">
+      <div class="main1" id="txtarea" contenteditable="true"></div>
+      <div style="display: flex; flex-direction: column;">
+        <select
+          class="btn"
+          name="fontstyle"
+          id="fontstyle"
+          onchange="changeType(this)"
+        >
+          <option value="" selected disabled>Font Style</option>
+          <option value="normal">Normal</option>
+          <option value="italic">Italic</option>
+          <option value="bold">Bold</option>
+        </select>
+        <select
+          class="btn"
+          name="textdeco"
+          id="textdeco"
+          onchange="changeType(this)"
+        >
+          <option value="" selected disabled>Text-Decoration</option>
+          <option value="none">None</option>
+          <option value="underline">Underline</option>
+          <!-- <option value="overline">Overline</option> -->
+          <option value="strikeThrough">Strike-Through</option>
+        </select>
+        <input
+          style="padding: 0px; height: 33px; width: auto;"
+          class="btn"
+          type="color"
+          id="color"
+        />
+        <select
+          class="btn"
+          max="50"
+          min="1"
+          onchange="changeType(this)"
+          type="number"
+          name="fontsize"
+          id="fontSize"
+          placeholder="Enter Font Size (px)"
+        >
+          <option value="" selected disabled>Font Size</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+        </select>
+        <button
+          id="txtbg"
+          onclick="changeType(this)"
+          class="btn"
+          title="Highlight selected text with the color selected in color box"
+        >
+          Highlight Text
+        </button>
+        <button
+          onclick="changeType(this)"
+          title="Change selected text color with the color selected in color box"
+          class="btn"
+          id="txtcolor"
+        >
+          Text Color
+        </button>
+        <button class="u fas fa-redo" value="redo" onclick="redo()">
+          Redo
+        </button>
+        <button class="u fas fa-undo" value="undo" onclick="undo()">
+          Undo
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
+<script src="logic.js"></script>
